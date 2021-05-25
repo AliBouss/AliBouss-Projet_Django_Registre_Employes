@@ -20,8 +20,9 @@ from Register.views import employee_form, employee_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', employee_form, name="form"),
-    path('list/', employee_list, name="list"),
+    path('', employee_form, name="insert-form"),  # insert data
+    path('<int:id>/', employee_form, name="update-form"),  # update form
+    path('list/', employee_list, name="list")  # display records
 
 ]
 

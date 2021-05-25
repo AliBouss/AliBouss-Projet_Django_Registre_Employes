@@ -1,5 +1,28 @@
 {% extends "register/base.html" %}
+{% load static %}
 
 {% block content %}
-    <p>Liste d'enregistrement des employés....</p>
+    <table class="table table-borderless">
+        <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Full Name</td>
+            <td>Phone</td>
+            <td>Position</td>
+        </tr>
+        </thead>
+        <tbody>
+            {% for i in employee_list %}
+                <tr>
+                    <td>{{i.fullname}}</td>
+                    <td>{{i.phone}}</td>
+                    <td>{{i.position}}</td>
+                    <td>
+                        <a href="{% url 'list' i.id %}" class="btn text-secondary px-0">
+                            <i class="far fa-edit fa-lg"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
