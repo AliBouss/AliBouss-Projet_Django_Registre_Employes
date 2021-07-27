@@ -15,3 +15,6 @@ class Employee(models.Model):
     emp_code = models.CharField(max_length=12)
     phone = models.CharField(max_length=26)
     position = models.ForeignKey(Position, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.fullname

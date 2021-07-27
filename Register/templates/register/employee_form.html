@@ -5,7 +5,7 @@
 
     <p>Votre Application d'enregistrement des employés....</p>
 
-        <form action="" method="post" autocomplete="off">
+        <form action="" method="POST" autocomplete="off">
             {% csrf_token %}
             {{form.fullname|as_crispy_field}}
             {{form.phone|as_crispy_field}}
