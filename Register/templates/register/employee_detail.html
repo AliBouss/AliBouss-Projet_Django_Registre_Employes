@@ -1,0 +1,42 @@
+{% extends "register/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<a href="{% url 'list' %}"><i class="fas fa-arrow-circle-left fa-lg" style="color:black;"></i></a>
+<h2 style="text-align:center;">La fiche detaillée de {{detail.fullname | title}}</h2>
+<br>
+<hr>
+<br>
+    <table class="table table-borderless">
+        <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Phone</td>
+            <td>Position</td>
+            <td>Emp_Code</td>
+            <td>Update</td>
+            <td>Delete</td>
+
+        </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{detail.phone}}</td>
+                    <td>{{detail.position}}</td>
+                    <td style="padding-left:40px;">{{detail.emp_code}}</td>
+
+                    <td>
+                        <a href="{% url 'update' detail.id %}" class="btn text-secondary px-0">
+                            <i class="far fa-edit fa-lg" style="padding-left:15px; color:green;"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'delete' detail.id %}" class="btn text-secondary px-0">
+                            <i class="far fa-trash-alt fa-lg" style="padding-left:15px; color:red;"></i>
+                        </a>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}

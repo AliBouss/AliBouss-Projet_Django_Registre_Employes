@@ -2,27 +2,30 @@
 {% load static %}
 
 {% block content %}
+    <h1 style="text-align:center;">La Liste des Employés.</h1>
+    <hr>
+    <br>
+    <a href="{% url 'form' %}">Go Back</a>
+    <br>
     <table class="table table-borderless">
         <thead class="border-bottom font-weight-bold">
-        <tr>
+        <tr style="text-align:center;">
+            <td>View</td>
             <td>Full Name</td>
-            <td>Phone</td>
             <td>Position</td>
         </tr>
         </thead>
         <tbody>
-            {% for i in context %}
-                <tr>
-                    <td>{{i.fullname}}</td>
-                    <td>{{i.phone}}</td>
+                {% for i in employees %}
+                <tr style="text-align:center;">
+                    <td style="padding-left:25px;"><a href="{% url 'detail' i.id %}"><i class="far fa-eye"></i></a></td>
+                    <td style="padding-left:25px;">{{i.fullname}}</td>
                     <td>{{i.position}}</td>
-                    <td>
-                        <a href="{% url 'list' i.id %}" class="btn text-secondary px-0">
-                            <i class="far fa-edit fa-lg"></i>
-                        </a>
-                    </td>
+
                 </tr>
-            {% endfor %}
+                {% endfor %}
         </tbody>
     </table>
+    <a href="{% url 'form' %}"><i class="fas fa-arrow-circle-left fa-lg" style="color:black;"></i></a>
+
 {% endblock %}

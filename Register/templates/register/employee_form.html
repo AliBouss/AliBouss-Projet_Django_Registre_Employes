@@ -3,7 +3,15 @@
 
 {% block content %}
 
-    <p>Votre Application d'enregistrement des employés....</p>
+    <br>
+    <br>
+    <p style="text-align:center;">Veuillez remplir les champs ci-dessous svp....<br>
+        <br>
+        <a href="{% url 'list' %}" class="btn btn-primary">
+        <i class="fas fa-bars"></i>
+            Employees List
+    </a>
+    </p>
 
         <form action="" method="POST" autocomplete="off">
             {% csrf_token %}
@@ -21,6 +29,7 @@
                 <i class="fas fa-database"></i>
                 Submit
             </button>
+
         </form>
 
 

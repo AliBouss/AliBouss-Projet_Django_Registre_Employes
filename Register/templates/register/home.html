@@ -1,0 +1,39 @@
+{% extends "register/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+
+    <div class="contenair" style="text-align:center;">
+        <h1>Employees Register</h1>
+              <p class="lead font-italic">Application with Django CRUD...</p>
+              <hr class="my-4">
+        <br>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <h1>Loading <i class="fas fa-spinner"></i></h1>
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="far fa-smile"></i>
+                    Employees Register App
+                    <i class="far fa-smile"></i>
+                </h5>
+                <p class="card-text">L'Application d'enregistrement des employés.....</p>
+                <a href="{% url 'form' %}" class="btn btn-primary">
+                    <i class="fas fa-stream"></i>
+                    Edit Items
+                </a>
+
+            </div>
+            <div class="card-footer text-muted">
+                2 days ago
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
